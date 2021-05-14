@@ -5,11 +5,18 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    images: []
   },
   mutations: {
+    setImages(state, newImages){
+      state.images = newImages
+    }
   },
   actions: {
+    setImagesDelayed({ commit }, newImages) {
+      setTimeout(() => {
+        commit('setImages', newImages)
+      }, 500)
+    }
   },
-  modules: {
-  }
 })
