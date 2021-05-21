@@ -19,4 +19,9 @@ export default new Vuex.Store({
       }, 500)
     }
   },
+  getters: {
+    getImageById : state => id => {
+      return state.images.find(img => img.id === id)
+    }
+  }
 })
