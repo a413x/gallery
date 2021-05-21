@@ -9,3 +9,19 @@
     </v-app>
   </div>
 </template>
+
+<script>
+  const url = 'https://jsonplaceholder.typicode.com/photos/'
+  import {mapActions} from 'vuex'
+  import {getData} from '@/utils.js'
+  export default {
+    mounted(){
+      getData(
+        url,
+        data => this.setImagesDelayed(data),
+        err => console.error(err)
+      )
+    },
+    methods: mapActions(['setImagesDelayed'])
+  }
+</script>
