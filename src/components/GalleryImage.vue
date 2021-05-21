@@ -1,7 +1,7 @@
 <template lang="html">
   <v-container class="gallery-image">
     <v-card max-width="250" max-height="350">
-      <v-img :src="url" max-width="250" max-height="250"></v-img>
+      <v-img :src="imageInfo.url" max-width="250" max-height="250"></v-img>
       <v-card-title>
         {{cuttedTitle}}
       </v-card-title>
@@ -13,12 +13,10 @@
 import {cutTitle} from '@/utils.js'
 export default {
   name: 'GalleryImage',
-  props: {
-    url: String, title: String,
-  },
+  props: { imageInfo: Object },
   computed: {
     cuttedTitle(){
-      return cutTitle(this.title, 43)
+      return cutTitle(this.imageInfo.title, 40)
     }
   }
 }

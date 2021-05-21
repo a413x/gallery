@@ -2,10 +2,7 @@
   <v-container class="category">
     <v-row>
       <v-col v-for="image in images" :key="image.id">
-        <GalleryImage
-          :url="image.url"
-          :title="image.title"
-        />
+        <GalleryImage :imageInfo="image"/>
       </v-col>
     </v-row>
   </v-container>
@@ -14,11 +11,7 @@
 <script>
   import GalleryImage from '@/components/GalleryImage.vue'
   export default {
-    props: {
-       images: GalleryImage
-    },
-    components: {
-      GalleryImage
-    }
+    props: { images: Array },
+    components: { GalleryImage }
   }
 </script>
