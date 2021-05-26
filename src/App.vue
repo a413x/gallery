@@ -19,7 +19,10 @@
       getData(
         url,
         data => this.setImagesDelayed(data),
-        err => console.error(err)
+        err => {
+          console.error(err)
+          this.$store.commit('setLoading', false)
+        }
       )
     },
     methods: mapActions(['setImagesDelayed'])
