@@ -1,7 +1,7 @@
 <template>
   <v-container class="about">
-    <div>Alexander</div>
-    <div>variuhin75@gmail.com</div>
+    <div class="text-h5">Alexander</div>
+    <div class="text-subtitle-1 mb-7">variuhin75@gmail.com</div>
 
     <v-btn icon href="https://github.com/a413x">
       <v-icon large>mdi-github</v-icon>
